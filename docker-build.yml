@@ -1,0 +1,27 @@
+name: docker-build.yml
+
+on: 
+  push:
+     branches: none # [main ]
+     
+   pull requests:
+     branches: none # [ main ]
+     
+  # Allows you  to run this workflow manually from the actions tab 
+  
+  workflow_dispatch:
+  
+  
+  jobs:
+  
+  
+  build-container:
+  
+    runs-on:ubuntu-latest
+    
+    steps:
+    
+     - uses: action/checkout
+     - name: Build the docker image 
+     working-directory: 
+     run: docker build . --file Dockerfile --tag ikart: 
